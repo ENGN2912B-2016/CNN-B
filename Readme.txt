@@ -1,3 +1,9 @@
+Welcome to CNN-B!
+
+I am a repository for Zijun Cui, Zhenhua Tian and Lemeng Wang.
+
+
+
 //////////Caffe//////////
 
 Caffe tutorial
