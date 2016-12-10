@@ -26,6 +26,11 @@ private slots:
     void normalSize();
     void fitToWindow();
     void about();
+    void outputLeNet();
+    void outputSiamese();
+    void outputCaffeNet();
+    void outputAlexNet();
+    void outputGoogleNet();
 
 private:
     void createActions();
@@ -46,6 +51,11 @@ private:
     QAction *zoomOutAct;
     QAction *normalSizeAct;
     QAction *fitToWindowAct;
+    QAction *lenetAct;
+    QAction *siameseAct;
+    QAction *caffenetAct;
+    QAction *alexnetAct;
+    QAction *googlenetAct;
 };
 
 #endif
