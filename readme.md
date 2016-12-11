@@ -1,11 +1,15 @@
-Welcome to __CNN-B__, a C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.  
-
-This is a convolutional neural network repository, based on Caffe and comprised of CaffeNet, AlexNet, and GoogleNet.      
-
-__Installation instructions__
+Welcome to __CNN-B__, a C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
-__Dependencies__
+This is a convolutional neural network repository, based on Caffe and comprised of CaffeNet, AlexNet, and GoogleNet.
+
+
+
+
+#Installation instructions#
+
+
+##Dependencies##
 
 
 CUDA is required for GPU mode
@@ -20,16 +24,16 @@ Boost >= 1.55
 protobuf, glog, gflags, hdf5
 
 
-__Compilation__
+##Compilation##
 
 
-On your own machines:
+###On your own machines###
 
 
 _Git clone_ the repository to your own computer and run _“make all”_
 
 
-On CCV:
+###On CCV###
 
 
 Request 2 GPUs using the command _"interact -q gpu -n 2 -t 1:00:00"_.
@@ -88,19 +92,25 @@ __Objective__
 The CNN Viewer shows how to choose, display, save and adjust an image. Then it let users to choose a dataset and a training architecture to test it, and pop up the top 5 testing possibilities and their corresponding labels in the dataset.
 
 
+Qt is currently unable to compile Caffe probably because the downloadable gflags/gflags.h library is not compatible with Qt. This project is a demo of the ideal input and output.
+
+
 __Instruction__
 
 
 In the CNN_GUI user interface, go to _File_ -> _Open_ and choose _~/CNN\_GUI/basketball.jpg
 
 
-Go to _Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNetand view the testing result
+Go to _Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNet_ or _GoogleNet_ and view the testing result (top 5 possibilities and the corresponding label)
 
 
-QLabel is typically used for displaying a text, but it can also display an image. QScrollArea provides a scrolling view around another widget. If the child widget exceeds the size of the frame, QScrollArea automatically provides scroll bars.
+Note that:
 
 
-The CNN Viewer demonstrates how QLabel's ability to scale its contents (QLabel::scaledContents), and QScrollArea's ability to automatically resize its contents (QScrollArea::widgetResizable), which can be used to implement zooming and scaling features.
+The _View_  and _Test_ Menu is disabled until an image is opened.
+
+
+_Test_ -> _MNIST_ is not available for the given image.
 
 
 
@@ -231,12 +241,85 @@ Define the siamese network used for training. The resulting network is defined i
 Nothing special needs to be done to the solver besides pointing it at the correct model file. The solver is defined in _./examples/siamese/mnist_siamese_solver.prototxt_
 
 
+To train the model, simply run 
+
+
+_./examples/siamese/train_mnist_siamese.sh_
+
+
+Draw the model and siamese networks by running the following commands that draw the DAGs defined in the .prototxt files:
+
+
+./python/draw_net.py \
+
+    ./examples/siamese/mnist_siamese.prototxt \
+
+    ./examples/siamese/mnist_siamese.png
+
+./python/draw_net.py \
+
+    ./examples/siamese/mnist_siamese_train_test.prototxt \
+
+    ./examples/siamese/mnist_siamese_train_test.png
 
 
 
 
-ImageNet
-CaffeNet
+
+__Brewing ImageNet__
+
+
+The guide specifies all paths and assumes all commands are executed from the root caffe directory.
+By “ImageNet” we here mean the ILSVRC12 challenge, but you can easily train on the whole of ImageNet as well, just with more disk space, and a little longer training time.
+We assume that you already have downloaded the ImageNet training data and validation data
+
+
+Download: http://image-net.org/download-images
+
+
+and they are stored on your disk like:
+
+
+_/path/to/imagenet/train/n01440764/n01440764_10026.JPEG_
+
+_/path/to/imagenet/val/ILSVRC2012_val_00000001.JPEG_
+
+
+
+
+Prepare some auxiliary data for training. 
+
+
+This data can be downloaded by:
+
+
+_./data/ilsvrc12/get_ilsvrc_aux.sh_
+
+
+The model requires us to subtract the image mean from each image, so we have to compute the mean, the mean computation can be carried out as
+
+
+_./examples/imagenet/make_imagenet_mean.sh_
+
+
+which will make _data/ilsvrc12/imagenet_mean.binaryproto_
+
+
+To train
+
+
+_./build/tools/caffe train --solver=models/bvlc_reference_caffenet/solver.prototxt_
+
+
+
+
+
+
+
+
+
+
+
 
 
 Jupyter Notebook Examples
