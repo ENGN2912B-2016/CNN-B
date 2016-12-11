@@ -1,7 +1,22 @@
 Welcome to __CNN-B__, a C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
-This is a convolutional neural network repository, based on Caffe and comprised of CaffeNet, AlexNet, and GoogleNet.
+This is an Object Classification repository, based on Caffe 
+
+
+We used three convolutional neural networks provided by Caffe to do object classification: 
+CaffeNet, AlexNet, and GoogleNet
+
+
+We did classification with 6 different objects, each object taken with 10 different scales. 
+
+
+Images are in _examples/images_
+
+
+Three .i
+
+
 
 
 #Installation instructions
@@ -28,13 +43,13 @@ protobuf, glog, gflags, hdf5
 ###On your own machines
 
 
-####Caffe
+####Install Caffe
 
 
 _Git clone_ the repository to your own computer and run _“make all”_
 
 
-####Qt
+####Install Qt interface
 
 
 Git clone the repository to your own computer and run:
@@ -75,7 +90,7 @@ Try another way: directly load the _Caffe_ module
 
 
 
-#Qt
+#Qt interface
 
 
 ##Objective
