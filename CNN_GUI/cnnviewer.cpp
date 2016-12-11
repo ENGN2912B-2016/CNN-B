@@ -143,9 +143,9 @@ void CNNViewer::about()
 {
     QMessageBox::about(this, tr("About CNN Viewer"),
                        tr("<p><b>Objective<b> </p>"
-                       "<p>The CNN Viewer example shows how to choose, display, save and adjust an image. "
+                       "<p>The CNN Viewer shows how to choose, display, save and adjust an image. "
                        "Then it let users to choose a dataset and a training architecture to test it, "
-                       "and pop up the top 3 testing possibilities and their corresponding labels in the dataset. "
+                       "and pop up the top 5 testing possibilities and their corresponding labels in the dataset. "
                        "<p><b>Implementation<b></p>"
                        "QLabel is typically used for displaying a text, but it can also display an image. "
                        "QScrollArea provides a scrolling view around another widget. "
@@ -193,16 +193,16 @@ void CNNViewer::createActions()
     fitToWindowAct->setCheckable(true);
     fitToWindowAct->setShortcut(tr("Ctrl+F"));
 
-    QMenu *trainMenu = menuBar()->addMenu(tr("&Train"));
+    QMenu *testMenu = menuBar()->addMenu(tr("&Test"));
 
-    QMenu *mnistSubmenu = trainMenu->addMenu(tr("&MNIST"));
+    QMenu *mnistSubmenu = testMenu->addMenu(tr("&MNIST"));
 
     lenetAct = mnistSubmenu->addAction(tr("&LeNet"), this, &CNNViewer::outputLeNet);
     lenetAct->setEnabled(false);
     siameseAct = mnistSubmenu->addAction(tr("&Siamese"), this, &CNNViewer::outputSiamese);
     siameseAct->setEnabled(false);
 
-    QMenu *imagenetSubmenu = trainMenu->addMenu(tr("&ImageNet"));
+    QMenu *imagenetSubmenu = testMenu->addMenu(tr("&ImageNet"));
 
     caffenetAct = imagenetSubmenu->addAction(tr("&CaffeNet"), this, &CNNViewer::outputCaffeNet);
     caffenetAct->setEnabled(false);
@@ -211,7 +211,7 @@ void CNNViewer::createActions()
     googlenetAct = imagenetSubmenu->addAction(tr("&GoogleNet"), this, &CNNViewer::outputGoogleNet);
     googlenetAct->setEnabled(false);
 
-    QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
+    QMenu *helpMenu = menuBar()->addMenu(tr("&Help"));
 
     helpMenu->addAction(tr("&About"), this, &CNNViewer::about);
     helpMenu->addAction(tr("About &Qt"), &QApplication::aboutQt);
@@ -219,38 +219,44 @@ void CNNViewer::createActions()
 
 void CNNViewer::outputLeNet()
 {
-    QMessageBox::warning(this, tr("Train LeNet"),
-                         tr("Not applicable for training in LeNet"));
+    QMessageBox::warning(this, tr("Test LeNet"),
+                         tr("Not applicable for testing in LeNet"));
 }
 
 void CNNViewer::outputSiamese()
 {
-    QMessageBox::warning(this, tr("Train Siamese"),
-                         tr("Not applicable for training in Siamese"));
+    QMessageBox::warning(this, tr("Test Siamese"),
+                         tr("Not applicable for testing in Siamese"));
 }
 
 void CNNViewer::outputCaffeNet()
 {
-    QMessageBox::information(this, tr("Train CaffeNet"),
+    QMessageBox::information(this, tr("Test CaffeNet"),
                              tr("<p>p =   0.90265167  label = basketball</p>"
                                 "<p>p = 0.0089489967  label = spindle</p>"
-                                "<p>p = 0.0064962064  label = soccer ball</p>"));
+                                "<p>p = 0.0064962064  label = soccer ball</p>"
+                                "<p>p = 0.0051468485  label = purse</p>"
+                                "<p>p = 0.0050535896  label = drum, membranophone, tympan</p>"));
 }
 
 void CNNViewer::outputAlexNet()
 {
-    QMessageBox::information(this, tr("Train AlexNet"),
+    QMessageBox::information(this, tr("Test AlexNet"),
                              tr("<p>p =  0.67905688  label = basketball</p>"
                                 "<p>p = 0.041766133  label = Band Aid</p>"
-                                "<p>p = 0.031078326  label = wooden spoon</p>"));
+                                "<p>p = 0.031078326  label = wooden spoon</p>"
+                                "<p>p = 0.022154765  label = clog, geta, patten, sabot</p>"
+                                "<p>p = 0.016749773  label = cowboy hat, ten-gallon hat</p>"));
 }
 
 void CNNViewer::outputGoogleNet()
 {
-    QMessageBox::information(this, tr("Train GoogleNet"),
+    QMessageBox::information(this, tr("Test GoogleNet"),
                              tr("<p>p =    0.99986732  lebel = basketball</p>"
                                 "<p>p = 4.9977985e-05  label = rugby ball</p>"
-                                "<p>p = 3.1737542e-05  label = soccer ball</p>"));
+                                "<p>p = 3.1737542e-05  label = soccer ball</p>"
+                                "<p>p =    1.5939e-05  label = toilet seat</p>"
+                                "<p>p = 1.0065217e-05  label = jack-o'-lantern</p>"));
 }
 
 void CNNViewer::updateActions()
