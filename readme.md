@@ -28,7 +28,28 @@ protobuf, glog, gflags, hdf5
 ###On your own machines
 
 
+####Caffe
+
+
 _Git clone_ the repository to your own computer and run _“make all”_
+
+
+####Qt
+
+
+Git clone the repository to your own computer and run:
+
+
+_cd Qt/Tools/QtCreator/bin/_
+
+
+_./qtcreator_
+
+
+In Qt Creator, go to _File_ -> _Open File or Project_ and choose _~/CNN\_GUI/CNN\_GUI.pro_
+
+
+Click _Build Project_ and _Run_ in the left bottom
 
 
 ###On CCV
@@ -57,33 +78,6 @@ Try another way: directly load the _Caffe_ module
 #Qt
 
 
-##Overview
-
-
-Qt is downloadable from qt.io/download/. This project uses Qt open source version 5.7.0. It is available under GPL and LGPLv3 licenses.
-
-
-##Compilation
-
-
-On your own machines:
-
-
-Git clone the repository to your own computer and run:
-
-
-_cd Qt/Tools/QtCreator/bin/_
-
-
-_./qtcreator_
-
-
-In Qt Creator, go to _File_ -> _Open File or Project_ and choose _~/CNN\_GUI/CNN\_GUI.pro_
-
-
-Click _Build Project_ and _Run_ in the left bottom
-
-
 ##Objective
 
 
@@ -96,10 +90,10 @@ Qt is currently prevented from compiling Caffe by a linking error probably becau
 ##Instruction
 
 
-In the CNN_GUI user interface, go to _File_ -> _Open_ and choose _~/CNN\_GUI/basketball.jpg_
+In the CNN_GUI user interface, go to _File_ -> _Open_ and choose _~/CNN\_GUI/basketball.jpg_ (It’s adjustable in _View_ Menu)
 
 
-Go to _Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNet_ or _GoogleNet_ and view the testing result (top 5 possibilities and the corresponding label)
+Go to _Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNet_ or _GoogleNet_ and view the testing result
 
 
 Note that:
@@ -118,18 +112,22 @@ _Test_ -> _MNIST_ is not available for the given image. Please do not abuse.
 
 
 We accomplished LeNet training and Siamese network training on MNIST
+
+
 We tried CaffeNet training on ImageNet dataset but failed due to lack of GPU
 
 
 ##Training LeNet on MNIST with Caffe
 
 
-Visit CNN-B/caffe/examples/MNIST
+Follow our instructions in CNN-B/caffe/examples/MNIST
 
 
 MNIST is a small dataset, so training with GPU does not really introduce too much benefit due to communication overheads. On larger datasets with more complex models, such as ImageNet, the computation speed difference will be more significant.
 ##Siamese Network Training with Caffe
-Visit CNN-B/caffe/examples/siamese
+
+
+Follow our instructions in CNN-B/caffe/examples/siamese
 
 
 This example builds on the __Training LeNet on MNIST with Caffe__. 
@@ -139,7 +137,7 @@ This example builds on the __Training LeNet on MNIST with Caffe__.
 ##Brewing ImageNet
 
 
-Visit CNN-B/caffe/examples/imagenet
+Follow our instructions in CNN-B/caffe/examples/imagenet
 
 
 Downloaded the ImageNet training data and validation data
@@ -150,6 +148,9 @@ _http://image-net.org/download-images_
 
 
 #Jupyter Notebook Examples
+
+
+We accomplished 
 ##Learn Lenet
 ##Siamese
 ##Classification with CaffeNet
