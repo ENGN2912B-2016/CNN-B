@@ -6,10 +6,10 @@ This is a convolutional neural network repository, based on Caffe and comprised 
 
 
 
-#Installation instructions#
+#Installation instructions
 
 
-##Dependencies##
+##Dependencies
 
 
 CUDA is required for GPU mode
@@ -24,16 +24,16 @@ Boost >= 1.55
 protobuf, glog, gflags, hdf5
 
 
-##Compilation##
+##Compilation
 
 
-###On your own machines###
+###On your own machines
 
 
 _Git clone_ the repository to your own computer and run _“make all”_
 
 
-###On CCV###
+###On CCV
 
 
 Request 2 GPUs using the command _"interact -q gpu -n 2 -t 1:00:00"_.
