@@ -145,10 +145,10 @@ Follow our instructions in _CNN-B/caffe/examples/MNIST_
 Training time comparison:
 
 
+```
 GPU: 6 mins 37 seconds
-
-
 CPU: 16 mins 47 seconds
+```
 ###Siamese Network Training with Caffe
 
 
@@ -161,10 +161,10 @@ This example builds on the __Training LeNet on MNIST with Caffe__.
 Training time comparison:
 
 
+```
 GPU: 4 mins 50 seconds 
-
-
 CPU: 39 mins 2 seconds
+```
 
 
 ###Brewing ImageNet
@@ -225,4 +225,5 @@ probabilities:
  (0.0051468485, 'n04026417 purse'),
  (0.0050535896, 'n03249569 drum, membranophone, tympan')]
 ```
+
 
