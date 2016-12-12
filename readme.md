@@ -19,6 +19,8 @@ Our own images can be found in the folder `~/examples/Images`
 
 Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
 
+![Image 1]
+(Picture1.png)
 
 Detailed instructions are as follows.
 
@@ -226,5 +228,3 @@ probabilities:
  (0.0050535896, 'n03249569 drum, membranophone, tympan')]
 ```
 
-![Image 1]
-(Picture1.png)
