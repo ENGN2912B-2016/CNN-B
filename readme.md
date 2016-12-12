@@ -19,10 +19,24 @@ Our own images can be found in the folder `~/examples/Images`
 
 Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
 
+
+Our test result
+
+
 ![Image 1]
 (Picture1.png)
 
-Detailed instructions are as follows.
+
+The _x_-axis stands for the scale. 1 stands for the biggest size. 10 stands for the smallest size.
+
+
+The _y_-axis stands for the probability. The biggest probability is set to be 1. For each _x_, the average probabilities of 6 objects have been calculated.
+
+
+From the chart it is obvious that the probability of the correct classifications decreases as the sizes of the objects get smaller.
+
+
+Detailed instructions for our codes are as follows.
 
 
 ##Installation instructions
