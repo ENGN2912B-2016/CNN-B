@@ -1,10 +1,7 @@
-/*
-
-
 Welcome to __CNN-B__, a repository for the C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
-This is a Caffe-based Object Classification project. 3 convolutional neural networks have been used: CaffeNet, AlexNet, and GoogleNet. Object classifications have been performed on photos of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. To study the relation between the accuracy of classification and the size of an object, 10 photos have been taken for each object. The object has been scaled differently in each photo. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
+This is a Caffe-based Object Classification project. Three convolutional neural networks--CaffeNet, AlexNet, and GoogleNet--have been used to study the relationship between the accuracy of classification and the size of an object. The classifications have been performed on images of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. Each object is taken with 10 difference scale. The result is that the smaller an object is in a photo, the lower probability the correct result has to lie on top of the prediction results. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
 
 
 Our own images can be found in the folder `~/examples/Images`
@@ -27,47 +24,8 @@ Our own images can be found in the folder `~/examples/Images`
  Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
 
 
-*/
 
 
-Welcome to __CNN-B__, a C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
-
-
-This is an Object Classification repository, based on Caffe 
-
-
-We used three convolutional neural networks provided by Caffe to do object classification: 
-CaffeNet, AlexNet, and GoogleNet
-
-
-We did classification with 6 different objects, each object taken with 10 different scales. 
-
-
-Objects are TrashBin, Basketball, Screw, Pen, Printer, Monitor
-
-
-Images are in _CNN-B/examples/Images_
-
-
-We write three  .ipynb files to do the classification computation:
-
-
-_CNN-B/examples/Classification_CaffeNet.ipynb_
-
-
-_CNN-B/examples/Classification_AlexNet.ipynb_
-
-
-_CNN-B/examples/Classification_GoogleNet.ipynb_
-
-
-We also provide a caffe interface written in Qt. 
-
-
-With this interface, you could input the image, choose one of three trained convolutional neural networks: CaffeNet, AlexNet and GoogleNet to do object classification, and finally get the top 5 predictions computed from the chosen network.
-
-
-This part are in the folder: _CNN-B/qt-interface/Classification-GUI_
 
 
 Detailed instructions are shown as follows.
