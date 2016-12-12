@@ -1,7 +1,7 @@
 Welcome to __CNN-B__, a repository for the C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
-This is a Caffe-based Object Classification project. Three convolutional neural networks--CaffeNet, AlexNet, and GoogleNet--have been used to study the relationship between the accuracy of classification and the size of an object. The classifications have been performed on images of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. Each object is taken with 10 difference scale. The result is that the smaller an object is in a photo, the lower probability the correct result has to lie on top of the prediction results. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
+This is a Caffe-based Object Classification project. Three convolutional neural networks--CaffeNet, AlexNet, and GoogleNet--have been used to study the relationship between the accuracy of classification and the size of an object. The classifications have been performed on images of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. Each object is taken with 10 difference scales. The result is that the smaller an object is in a photo, the lower probability the correct description has to lie on top of the prediction results. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
 
 
 Our own images can be found in the folder `~/examples/Images`
@@ -145,7 +145,11 @@ _Test_ -> _MNIST_ is not available for the given image. Please do not abuse.
 
 
 We accomplished LeNet training and Siamese network training with MNIST dataset both on GPU and CPU 
+
+
 GPU: GeForce GT 750M
+
+
 CPU: CORE i5 3230
 
 
@@ -236,5 +240,6 @@ probabilities:
  (0.0051468485, 'n04026417 purse'),
  (0.0050535896, 'n03249569 drum, membranophone, tympan')]
 ```
+
 
 
