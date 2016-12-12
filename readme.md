@@ -1,3 +1,35 @@
+/*
+
+
+Welcome to __CNN-B__, a repository for the C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
+
+
+This is a Caffe-based Object Classification project. 3 convolutional neural networks have been used: CaffeNet, AlexNet, and GoogleNet. Object classifications have been performed on the photos of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. For each object, 10 photos have been taken with different scales. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
+
+
+Our own images can be found in the folder `~/examples/Images`
+
+
+3 _ipynb_ files have been created for the classification computation:
+
+
+```
+~/examples/Classification_CaffeNet.ipynb
+
+
+~/examples/Classification_AlexNet.ipynb
+
+
+~/examples/Classification_GoogleNet.ipynb
+```
+
+
+ Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
+
+
+*/
+
+
 Welcome to __CNN-B__, a C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
@@ -11,10 +43,36 @@ CaffeNet, AlexNet, and GoogleNet
 We did classification with 6 different objects, each object taken with 10 different scales. 
 
 
-Images are in _examples/images_
+Objects are TrashBin, Basketball, Screw, Pen, Printer, Monitor
 
 
-Three .i
+Images are in _CNN-B/examples/Images_
+
+
+We write three  .ipynb files to do the classification computation:
+
+
+_CNN-B/examples/Classification_CaffeNet.ipynb_
+
+
+_CNN-B/examples/Classification_AlexNet.ipynb_
+
+
+_CNN-B/examples/Classification_GoogleNet.ipynb_
+
+
+We also provide a caffe interface written in Qt. 
+
+
+With this interface, you could input the image, choose one of three trained convolutional neural networks: CaffeNet, AlexNet and GoogleNet to do object classification, and finally get the top 5 predictions computed from the chosen network.
+
+
+This part are in the folder: _CNN-B/qt-interface/Classification-GUI_
+
+
+Detailed instructions are shown as follows.
+
+
 
 
 
@@ -85,8 +143,10 @@ Download and compile _gflags_ and receive another failure message.
 Try another way: directly load the _Caffe_ module
 
 
+According to CCV staff, Caffe requires Nvidia GPUs of CUDA compute capability > 3.0, to which our CCV accounts do not have access.
 
 
+no CUDA-capable device detected
 
 
 
@@ -123,23 +183,31 @@ _Test_ -> _MNIST_ is not available for the given image. Please do not abuse.
 
 
 
-#Train Examples
+##Training Examples
 
 
-We accomplished LeNet training and Siamese network training on MNIST
+We accomplished LeNet training and Siamese network training with MNIST dataset both on GPU and CPU 
+GPU: GeForce GT 750M
+CPU: CORE i5 3230
 
 
-We tried CaffeNet training on ImageNet dataset but failed due to lack of GPU
+We tried CaffeNet training with ImageNet dataset but failed due to CCV
 
 
-##Training LeNet on MNIST with Caffe
+###Training LeNet on MNIST with Caffe
 
 
 Follow our instructions in CNN-B/caffe/examples/MNIST
 
 
-MNIST is a small dataset, so training with GPU does not really introduce too much benefit due to communication overheads. On larger datasets with more complex models, such as ImageNet, the computation speed difference will be more significant.
-##Siamese Network Training with Caffe
+Training time compare:
+
+
+GPU: 6 mins 37 seconds
+
+
+CPU: 16 mins 47 seconds
+###Siamese Network Training with Caffe
 
 
 Follow our instructions in CNN-B/caffe/examples/siamese
@@ -148,8 +216,13 @@ Follow our instructions in CNN-B/caffe/examples/siamese
 This example builds on the __Training LeNet on MNIST with Caffe__. 
 
 
+GPU: 4 mins 50 seconds 
 
-##Brewing ImageNet
+
+CPU: 39 mins 2 seconds
+
+
+###Brewing ImageNet
 
 
 Follow our instructions in CNN-B/caffe/examples/imagenet
@@ -161,32 +234,22 @@ Downloaded the ImageNet training data and validation data
 _http://image-net.org/download-images_
 
 
-
-#Jupyter Notebook Examples
-
-
-We accomplished 
-##Learn Lenet
-##Siamese
-##Classification with CaffeNet
-##Classification with AlexNet
-##Classification with GooleNet
+To download all origin images, 138GB is needed.
 
 
+##Testing Examples
+###Object Classification with Python Interface
+Assume you have compiled _caffe_ and _pycaffe_ successfully. 
+To run _.ipynb_ file with jupyter notebook:
+```
+cd $CNN-B/examples  jupyter notebook
+```
+After you open jupyter notebook with browser, you can run _Classification_XXXNet.ipynb_ files we provided to do object classification. 
 
 
-
-/*
-On CCV:
-You should not trifle with me on CCV, unless you want to learn how mischievous and fastidious I could be.
+To test your image, change the path:
 
 
-You can allocate 2 high-performance GPUs using the command "interact -q gpu -n 2 -t 1:00:00", but that is far from enough to please me. I will not meet anybody unless they bring me a gift of an Nvidia GPU with a CUDA compute capability greater than 3.0.
 
 
-You may try your luck to compile me, but I shall warn you that the problem with gflags can never be tackled. Gflags can neither be loaded nor installed because of the low level of your CCV account. How much fun that could be!
-
-
-I know you would also think of using the Caffe module with CPU only. I can assure you, dear, that you can never break the shackle of "no CUDA-capable device detected". Besides, I have also disabled Cublas handle and Curand generator as a failsafe method to prevent you from ever succeed!
-*/
 
