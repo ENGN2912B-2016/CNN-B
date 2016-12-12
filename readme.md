@@ -35,10 +35,10 @@ Detailed instructions are shown as follows.
 
 
 
-#Installation instructions
+##Installation instructions
 
 
-##Dependencies
+###Dependencies
 
 
 CUDA is required for GPU mode
@@ -53,19 +53,19 @@ Boost >= 1.55
 protobuf, glog, gflags, hdf5
 
 
-##Compilation
+###Compilation
 
 
-###On your own machines
+####On your own machines
 
 
-####Install Caffe
+#####Install Caffe
 
 
 _Git clone_ the repository to your own computer and run _“make all”_
 
 
-####Install Qt interface
+#####Install Qt interface
 
 
 Git clone the repository to your own computer and run:
@@ -83,7 +83,7 @@ In Qt Creator, go to _File_ -> _Open File or Project_ and choose _~/CNN\_GUI/CNN
 Click _Build Project_ and _Run_ in the left bottom
 
 
-###On CCV
+####On CCV
 
 
 Request 2 GPUs using the command _"interact -q gpu -n 2 -t 1:00:00"_.
@@ -108,10 +108,10 @@ no CUDA-capable device detected
 
 
 
-#Qt interface
+##Qt interface
 
 
-##Objective
+###Objective
 
 
 The CNN Viewer lets users to choose a dataset and a training architecture to test it, and pop up the top 5 testing possibilities and their corresponding labels in the dataset.
@@ -120,7 +120,7 @@ The CNN Viewer lets users to choose a dataset and a training architecture to tes
 Qt is currently prevented from compiling Caffe by a linking error probably because the downloadable gflags/gflags.h library is not compatible with Qt. As a result, this project is a demo of the ideal input and output.
 
 
-##Instruction
+###Instruction
 
 
 In the CNN_GUI user interface, go to _File_ -> _Open_ and choose _~/CNN\_GUI/basketball.jpg_ (It’s adjustable in _View_ Menu)
@@ -141,16 +141,16 @@ _Test_ -> _MNIST_ is not available for the given image. Please do not abuse.
 
 
 
-##Training Examples
+##CNN Training Examples
 
 
 We accomplished LeNet training and Siamese network training with MNIST dataset both on GPU and CPU 
 
 
-GPU: GeForce GT 750M
+GPU: GeForce GT 750M (CUDA Compute Capability = 3.0)
 
 
-CPU: CORE i5 3230
+CPU: Intel Core i5-3230M Processor (up to 3.20 GHz)
 
 
 We tried CaffeNet training with ImageNet dataset but failed due to CCV
@@ -159,7 +159,7 @@ We tried CaffeNet training with ImageNet dataset but failed due to CCV
 ###Training LeNet on MNIST with Caffe
 
 
-Follow our instructions in CNN-B/caffe/examples/MNIST
+Follow our instructions in _CNN-B/caffe/examples/MNIST_
 
 
 Training time compare:
@@ -172,7 +172,7 @@ CPU: 16 mins 47 seconds
 ###Siamese Network Training with Caffe
 
 
-Follow our instructions in CNN-B/caffe/examples/siamese
+Follow our instructions in _CNN-B/caffe/examples/siamese_
 
 
 This example builds on the __Training LeNet on MNIST with Caffe__. 
@@ -199,9 +199,11 @@ _http://image-net.org/download-images_
 To download all origin images, 138GB is needed.
 
 
-##Testing Examples
+##CNN Testing Examples
 ###Object Classification with Python Interface
 Assume you have compiled _caffe_ and _pycaffe_ successfully. 
+
+
 __To run _.ipynb_ files with jupyter notebook__
 
 
@@ -213,19 +215,19 @@ cd $CNN-B/examples  jupyter notebook
 After you open jupyter notebook with browser, you can run _Classification_XXXNet.ipynb_ files we provided to do object classification. 
 
 
-To test your image, simply change the path to where your image located
-
-
-```
-image = caffe.io.load_image(caffe_root + 'examples/images/basketball/5.JPG')
-```
-
-
 __To run _.ipynb_files with command line__
 
 
 ```
 cd $CNN-B/examples  jupyter nbconvert --to notebook --execute Classification_XXXNet.ipynb
+```
+
+
+To test your image, simply change the path to where your image located
+
+
+```
+image = caffe.io.load_image(caffe_root + 'examples/images/basketball/5.JPG')
 ```
 
 
@@ -240,6 +242,5 @@ probabilities:
  (0.0051468485, 'n04026417 purse'),
  (0.0050535896, 'n03249569 drum, membranophone, tympan')]
 ```
-
 
 
