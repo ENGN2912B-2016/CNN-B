@@ -12,27 +12,15 @@ Our own images can be found in the folder `~/examples/Images`
 
 ```
 ~/examples/Classification_CaffeNet.ipynb
-
-
 ~/examples/Classification_AlexNet.ipynb
-
-
 ~/examples/Classification_GoogleNet.ipynb
 ```
 
 
- Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
+Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
 
 
-
-
-
-
-Detailed instructions are shown as follows.
-
-
-
-
+Detailed instructions are as follows.
 
 
 ##Installation instructions
@@ -41,16 +29,10 @@ Detailed instructions are shown as follows.
 ###Dependencies
 
 
-CUDA is required for GPU mode
+CUDA, BLAS, Boost >= 1.55, protobuf, glog, gflags, hdf5
 
 
-BLAS via ATLAS, MKL, or OpenBLAS
-
-
-Boost >= 1.55
-
-
-protobuf, glog, gflags, hdf5
+According to CCV staff, Caffe requires Nvidia GPUs of CUDA compute capability > 3.0, to which our CCV accounts do not have access.
 
 
 ###Compilation
@@ -59,22 +41,16 @@ protobuf, glog, gflags, hdf5
 ####On your own machines
 
 
-#####Install Caffe
+`Git clone_ the repository to your own computer and run _“make all”`
 
 
-_Git clone_ the repository to your own computer and run _“make all”_
+__Install Qt interface:__
 
 
-#####Install Qt interface
-
-
-Git clone the repository to your own computer and run:
-
-
-_cd Qt/Tools/QtCreator/bin/_
-
-
-_./qtcreator_
+```
+cd Qt/Tools/QtCreator/bin/
+./qtcreator
+```
 
 
 In Qt Creator, go to _File_ -> _Open File or Project_ and choose _~/CNN\_GUI/CNN\_GUI.pro_
@@ -162,7 +138,7 @@ We tried CaffeNet training with ImageNet dataset but failed due to CCV
 Follow our instructions in _CNN-B/caffe/examples/MNIST_
 
 
-Training time compare:
+Training time comparison:
 
 
 GPU: 6 mins 37 seconds
@@ -178,6 +154,9 @@ Follow our instructions in _CNN-B/caffe/examples/siamese_
 This example builds on the __Training LeNet on MNIST with Caffe__. 
 
 
+Training time comparison:
+
+
 GPU: 4 mins 50 seconds 
 
 
@@ -187,7 +166,7 @@ CPU: 39 mins 2 seconds
 ###Brewing ImageNet
 
 
-Follow our instructions in CNN-B/caffe/examples/imagenet
+Follow our instructions in _CNN-B/caffe/examples/imagenet_
 
 
 Downloaded the ImageNet training data and validation data
@@ -212,7 +191,7 @@ cd $CNN-B/examples  jupyter notebook
 ```
 
 
-After you open jupyter notebook with browser, you can run _Classification_XXXNet.ipynb_ files we provided to do object classification. 
+Open jupyter notebook with browser. Then you can run _Classification_XXXNet.ipynb_ files to do object classification. 
 
 
 __To run _.ipynb_files with command line__
@@ -223,7 +202,7 @@ cd $CNN-B/examples  jupyter nbconvert --to notebook --execute Classification_XXX
 ```
 
 
-To test your image, simply change the path to where your image located
+To test your image, simply change the path to where your image is located
 
 
 ```
@@ -231,7 +210,7 @@ image = caffe.io.load_image(caffe_root + 'examples/images/basketball/5.JPG')
 ```
 
 
-After computation, you will get top 5 possible predictions. Following is an output example from Classification_CaffeNet.ipynb
+When computation finish, you will get top 5 possible classifications. Following is an output example from Classification_CaffeNet.ipynb
 
 
 ```
@@ -242,5 +221,6 @@ probabilities:
  (0.0051468485, 'n04026417 purse'),
  (0.0050535896, 'n03249569 drum, membranophone, tympan')]
 ```
+
 
 
