@@ -158,7 +158,7 @@ We tried CaffeNet training with ImageNet dataset but failed due to the aforement
 ###Training LeNet on MNIST with Caffe
 
 
-Follow our instructions in _CNN-B/caffe/examples/MNIST_
+Follow our instructions in _CNN-B/examples/MNIST_
 
 
 Training time comparison:
@@ -171,7 +171,7 @@ CPU: 16 mins 47 seconds
 ###Siamese Network Training with Caffe
 
 
-Follow our instructions in _CNN-B/caffe/examples/siamese_
+Follow our instructions in _CNN-B/examples/siamese_
 
 
 This example builds on the __Training LeNet on MNIST with Caffe__. 
@@ -189,7 +189,7 @@ CPU: 39 mins 2 seconds
 ###Brewing ImageNet
 
 
-Follow our instructions in _CNN-B/caffe/examples/imagenet_
+Follow our instructions in _CNN-B/examples/imagenet_
 
 
 Downloaded the ImageNet training data and validation data
