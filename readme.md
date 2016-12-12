@@ -44,7 +44,7 @@ According to CCV staff, Caffe requires Nvidia GPUs of CUDA compute capability > 
 `Git clone_ the repository to your own computer and run _“make all”`
 
 
-__Install Qt interface:__
+Install Qt interface:
 
 
 ```
@@ -62,7 +62,7 @@ Click _Build Project_ and _Run_ in the left bottom
 ####On CCV
 
 
-Request 2 GPUs using the command _"interact -q gpu -n 2 -t 1:00:00"_.
+Request 2 GPUs using the command `"interact -q gpu -n 2 -t 1:00:00"`.
 
 
 Load modules _opencv, boost, protobuf, cuda, cudnn, atlas, hdf5_.
@@ -74,13 +74,17 @@ Run _“make all”_ and receive a failure message complaining about gflags.
 Download and compile _gflags_ and receive another failure message.
 
 
-Try another way: directly load the _Caffe_ module
+Try another way: directly loading the _Caffe_ module.
 
 
-According to CCV staff, Caffe requires Nvidia GPUs of CUDA compute capability > 3.0, to which our CCV accounts do not have access.
+Try training networks and receive an error message _“no CUDA-capable device detected”_.
 
 
-no CUDA-capable device detected
+Reach the conclusion that you can neither train networks nor test networks due to the aforementioned CUDA compute capability problem.
+
+
+
+
 
 
 
@@ -129,7 +133,7 @@ GPU: GeForce GT 750M (CUDA Compute Capability = 3.0)
 CPU: Intel Core i5-3230M Processor (up to 3.20 GHz)
 
 
-We tried CaffeNet training with ImageNet dataset but failed due to CCV
+We tried CaffeNet training with ImageNet dataset but failed due to the aforementioned CUDA compute capability problem with CCV.
 
 
 ###Training LeNet on MNIST with Caffe
@@ -221,6 +225,4 @@ probabilities:
  (0.0051468485, 'n04026417 purse'),
  (0.0050535896, 'n03249569 drum, membranophone, tympan')]
 ```
-
-
 
