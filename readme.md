@@ -27,10 +27,10 @@ Our test result
 (Picture1.png)
 
 
-The _x_-axis stands for the scale. 1 stands for the biggest size. 10 stands for the smallest size.
+The _x_-axis stands for the scale. 1 is the biggest size and 10 is the smallest one.
 
 
-The _y_-axis stands for the probability. The biggest probability is set to be 1. For each _x_, the average probabilities of 6 objects have been calculated.
+The _y_-axis stands for the probability. The biggest probability is linearly curved to be 1. For each _x_, the average probabilities of 6 objects have been calculated.
 
 
 From the chart it is obvious that the probability of the correct classifications decreases as the sizes of the objects get smaller.
@@ -99,11 +99,6 @@ Try training networks and receive an error message _“no CUDA-capable device de
 Reach the conclusion that you can neither train networks nor test networks due to the aforementioned CUDA compute capability problem.
 
 
-
-
-
-
-
 ##Qt interface
 
 
@@ -134,9 +129,17 @@ The _View_  and _Test_ Menu is disabled until an image is opened.
 _Test_ -> _MNIST_ is not available for the given image. Please do not abuse.
 
 
+##Back Propagation
 
 
-
+Serious efforts have been made in attempt to write our own back-propagation algorithm. If you would like to continue our work, please modify the following files:
+
+
+```
+~/directory/filename
+```
+
+
 ##CNN Training Examples
 
 
