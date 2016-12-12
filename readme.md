@@ -4,7 +4,7 @@
 Welcome to __CNN-B__, a repository for the C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
-This is a Caffe-based Object Classification project. 3 convolutional neural networks have been used: CaffeNet, AlexNet, and GoogleNet. Object classifications have been performed on the photos of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. For each object, 10 photos have been taken with different scales. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
+This is a Caffe-based Object Classification project. 3 convolutional neural networks have been used: CaffeNet, AlexNet, and GoogleNet. Object classifications have been performed on photos of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. To study the relation between the accuracy of classification and the size of an object, 10 photos have been taken for each object. The object has been scaled differently in each photo. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
 
 
 Our own images can be found in the folder `~/examples/Images`
@@ -240,16 +240,43 @@ To download all origin images, 138GB is needed.
 ##Testing Examples
 ###Object Classification with Python Interface
 Assume you have compiled _caffe_ and _pycaffe_ successfully. 
-To run _.ipynb_ file with jupyter notebook:
+__To run _.ipynb_ files with jupyter notebook__
+
+
 ```
 cd $CNN-B/examples  jupyter notebook
 ```
+
+
 After you open jupyter notebook with browser, you can run _Classification_XXXNet.ipynb_ files we provided to do object classification. 
 
 
-To test your image, change the path:
+To test your image, simply change the path to where your image located
 
 
+```
+image = caffe.io.load_image(caffe_root + 'examples/images/basketball/5.JPG')
+```
 
+
+__To run _.ipynb_files with command line__
+
+
+```
+cd $CNN-B/examples  jupyter nbconvert --to notebook --execute Classification_XXXNet.ipynb
+```
+
+
+After computation, you will get top 5 possible predictions. Following is an output example from Classification_CaffeNet.ipynb
+
+
+```
+probabilities:
+[(0.90265167, 'n02802426 basketball'),
+ (0.0089489967, 'n04277352 spindle'),
+ (0.0064962064, 'n04254680 soccer ball'),
+ (0.0051468485, 'n04026417 purse'),
+ (0.0050535896, 'n03249569 drum, membranophone, tympan')]
+```
 
 
