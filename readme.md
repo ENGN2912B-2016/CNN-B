@@ -51,31 +51,25 @@ CUDA, BLAS, Boost >= 1.55, protobuf, glog, gflags, hdf5
 According to CCV staff, Caffe requires Nvidia GPUs of CUDA compute capability > 3.0, to which our CCV accounts do not have access.
 
 
-###Compilation
+###CNN-B Compilation
 
 
 ####On your own machines
 
 
-`Git clone_ the repository to your own computer and run _“make all”`
+Install caffe:
 
 
-Install Qt interface:
+_http://caffe.berkeleyvision.org/installation.html_
 
 
-```
-cd Qt/Tools/QtCreator/bin/
-./qtcreator
-```
+Install Qt:
 
 
-In Qt Creator, go to _File_ -> _Open File or Project_ and choose _~/CNN\_GUI/CNN\_GUI.pro_
+_https://www.qt.io/_
 
 
-Click _Build Project_ and _Run_ in the left bottom
-
-
-####On CCV
+####On Center for Computation and Visualization-Brown University
 
 
 Request 2 GPUs using the command `"interact -q gpu -n 2 -t 1:00:00"`.
@@ -105,7 +99,7 @@ Reach the conclusion that you can neither train networks nor test networks due t
 ###Objective
 
 
-The CNN Viewer lets users to choose a dataset and a training architecture to test it, and pop up the top 5 testing possibilities and their corresponding labels in the dataset.
+The CNN Viewer lets users to choose a dataset and a defined architecture to accomplish training a convolutional neural network with chosen dataset. After training, user can upload an image to do object classification. The interface will pop up the top 5 testing possibilities and their corresponding labels.
 
 
 Qt is currently prevented from compiling Caffe by a linking error probably because the downloadable gflags/gflags.h library is not compatible with Qt. As a result, this project is a demo of the ideal input and output.
@@ -114,33 +108,50 @@ Qt is currently prevented from compiling Caffe by a linking error probably becau
 ###Instruction
 
 
-In the CNN_GUI user interface, go to _File_ -> _Open_ and choose _~/CNN\_GUI/basketball.jpg_ (It’s adjustable in _View_ Menu)
+#### with Qt creator
 
 
-Go to _Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNet_ or _GoogleNet_ and view the testing result
-
-
-Note that:
-
-
-The _View_  and _Test_ Menu is disabled until an image is opened.
-
-
-_Test_ -> _MNIST_ is not available for the given image. Please do not abuse.
-
-
-##Back Propagation
-
-
-Serious efforts have been made in attempt to write our own back-propagation algorithm. If you would like to continue our work, please modify the following files:
+Run Qt interface:
 
 
 ```
-~/directory/filename
+cd qt-interface/Tools/QtCreator/bin/
+./qtcreator
 ```
+
+
+In Qt Creator
+
+
+```
+ _File_ -> _Open File or Project_ ->_~/CNN\_GUI/CNN\_GUI.pro_
+ _Build Project_  
+_Run_ 
+```
+
+
+Once you succeed in running our CNN-GUI
+
+
+```
+ _File_ -> _Open_ -> _~/CNN\_GUI/basketball.jpg_ (It’s adjustable in _View_ Menu)
+_Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNet_ or _GoogleNet_ 
+_Result Window_
+```
+
+
+Error Catching:
+
+
+You can’t use  _View_  and _Test_ Menu if you are not providing an image.
+
+
 
 
 ##CNN Training Examples
+
+
+These examples are accomplished on our own machine instead of on CCV
 
 
 We accomplished LeNet training and Siamese network training with MNIST dataset both on GPU and CPU 
@@ -202,6 +213,11 @@ To download all origin images, 138GB is needed.
 
 
 ##CNN Testing Examples
+
+
+These examples are accomplished on our own machine instead of on CCV
+
+
 ###Object Classification with Python Interface
 Assume you have compiled _caffe_ and _pycaffe_ successfully. 
 
