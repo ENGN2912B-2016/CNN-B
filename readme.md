@@ -20,7 +20,7 @@ Our own images can be found in the folder `~/examples/Images`
 ```
 
 
-Code for Qt interface can be found in the folder `~/qt-interface/Classification-GUI`
+Code for Qt interface can be found in the folder `~/qt-interface/CNN-GUI`
 
 
 __Our test result:__
