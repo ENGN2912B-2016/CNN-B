@@ -108,10 +108,7 @@ Qt is currently prevented from compiling Caffe by a linking error probably becau
 ###Instruction
 
 
-#### with Qt creator
-
-
-Run Qt interface:
+Run Qt creator:
 
 
 ```
@@ -120,7 +117,7 @@ cd qt-interface/Tools/QtCreator/bin/
 ```
 
 
-In Qt Creator
+In Qt Creator:
 
 
 ```
@@ -134,18 +131,18 @@ Once you succeed in running our CNN-GUI
 
 
 ```
- _File_ -> _Open_ -> _~/CNN\_GUI/basketball.jpg_ (It’s adjustable in _View_ Menu)
-_Test_ -> _ImageNet_ -> _CaffeNet_ or _AlexNet_ or _GoogleNet_ 
-_Result Window_
+File -> Open -> ~/CNN\_GUI/basketball.jpg (It’s adjustable in View Menu)
+Test -> ImageNet -> CaffeNet or AlexNet or GoogleNet 
 ```
 
 
-Error Catching:
+After the test, a result window will automatically pop up.
+
+
+Error Handling:
 
 
 You can’t use  _View_  and _Test_ Menu if you are not providing an image.
-
-
 
 
 ##CNN Training Examples
