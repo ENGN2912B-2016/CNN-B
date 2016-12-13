@@ -1,6 +1,9 @@
 Welcome to __CNN-B__, a repository for the C++ team project by _Zijun Cui_, _Zhenhua Tian_ and _Lemeng Wang_.
 
 
+## Summary
+
+
 This is a Caffe-based Object Classification project. Three convolutional neural networks--CaffeNet, AlexNet, and GoogleNet--have been used to study the relationship between the accuracy of classification and the size of an object. The classifications have been performed on images of 6 different objects: a trash bin, a basketball, a screw, a pen, a printer, and a monitor. Each object is taken with 10 difference scales. The result is that the smaller an object is in a photo, the lower probability the correct description has to lie on top of the prediction results. Qt interface has been integrated into Caffe, fulfilling functions of image input, network customization, and prediction output.
 
 
@@ -121,9 +124,9 @@ In Qt Creator:
 
 
 ```
- _File_ -> _Open File or Project_ ->_~/CNN\_GUI/CNN\_GUI.pro_
- _Build Project_  
-_Run_ 
+File -> Open File or Project -> ~/CNN_GUI/CNN_GUI.pro
+Build Project
+Run
 ```
 
 
@@ -131,7 +134,7 @@ Once you succeed in running our CNN-GUI
 
 
 ```
-File -> Open -> ~/CNN\_GUI/basketball.jpg (It’s adjustable in View Menu)
+File -> Open -> ~/CNN_GUI/basketball.jpg (It’s adjustable in View Menu)
 Test -> ImageNet -> CaffeNet or AlexNet or GoogleNet 
 ```
 
@@ -139,10 +142,10 @@ Test -> ImageNet -> CaffeNet or AlexNet or GoogleNet
 After the test, a result window will automatically pop up.
 
 
-Error Handling:
+__Error Handling__:
 
 
-You can’t use  _View_  and _Test_ Menu if you are not providing an image.
+You cannot use  _View_  and _Test_ Menu if you are not providing an image.
 
 
 ##CNN Training Examples
